@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:vibration/vibration.dart';
+
 
 class SliderButton extends StatefulWidget {
   ///To make button more customizable add your child widget
@@ -157,15 +157,7 @@ class _SliderButtonState extends State<SliderButton> {
                       setState(() {
                         flag = !flag;
                       });
-                      final hasVibrator =
-                          await Vibration.hasVibrator() ?? false;
-                      if (widget.vibrationFlag && hasVibrator) {
-                        try {
-                          Vibration.vibrate(duration: 200);
-                        } catch (e) {
-                          print(e);
-                        }
-                      }
+                      
                       return true;
                     },
                     child: Container(
